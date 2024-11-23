@@ -424,7 +424,7 @@ $$
 Q(\theta | \theta^{(t)}) = -\frac{n}{2} \log(2\pi \sigma_\epsilon^2) - \frac{1}{2\sigma_\epsilon^2} E\left[ (Y - X\beta - Zu)^T (Y - X\beta - Zu) \Big| Y, \theta^{(t)} \right]
 $$
 $$
-- \frac{q}{2} \log(2\pi \sigma_u^2) - \frac{1}{2\sigma_u^2} E\left[ u^T G^{-1} u \Big| Y, \theta^{(t)} \right]
+\frac{q}{2} \log(2\pi \sigma_u^2) - \frac{1}{2\sigma_u^2} E\left[ u^T G^{-1} u \Big| Y, \theta^{(t)} \right]
 $$
 
 接下来，我们分别计算这些期望值。
@@ -459,7 +459,7 @@ $$
 Q(\theta | \theta^{(t)}) = -\frac{n}{2} \log(2\pi \sigma_\epsilon^2) - \frac{1}{2\sigma_\epsilon^2} \left( (Y - X\beta)^T (Y - X\beta) - 2(Y - X\beta)^T Z \mu_u^{(t)} + \text{Tr}(Z^T Z (\Sigma_u^{(t)} + \mu_u^{(t)} (\mu_u^{(t)})^T)) \right)
 $$
 $$
-- \frac{q}{2} \log(2\pi \sigma_u^2) - \frac{1}{2\sigma_u^2} \text{Tr}(G^{-1} (\Sigma_u^{(t)} + \mu_u^{(t)} (\mu_u^{(t)})^T))
+\frac{q}{2} \log(2\pi \sigma_u^2) - \frac{1}{2\sigma_u^2} \text{Tr}(G^{-1} (\Sigma_u^{(t)} + \mu_u^{(t)} (\mu_u^{(t)})^T))
 $$
 
 ## 3. 最大化 $ Q(\theta | \theta^{(t)}) $
@@ -531,7 +531,7 @@ $$
 将等式两边乘以 $ 2 (\sigma_u^2)^2 $：
 
 $$
-- q \sigma_u^2 + \text{Tr}(G^{-1} (\Sigma_u^{(t)} + \mu_u^{(t)} (\mu_u^{(t)})^T)) = 0
+q \sigma_u^2 + \text{Tr}(G^{-1} (\Sigma_u^{(t)} + \mu_u^{(t)} (\mu_u^{(t)})^T)) = 0
 $$
 
 解得：
@@ -751,4 +751,4 @@ $$
     β: 最终的 p×1 固定效应估计
     σ_u^2: 最终的 随机效应方差估计
     σ_ε^2: 最终的 误差方差估计
-```
+```\\[\\]\\(\\)

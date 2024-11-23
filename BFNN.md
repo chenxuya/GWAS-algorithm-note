@@ -195,9 +195,7 @@ $$
 将以上似然项和KL散度项结合起来，得到最终的损失函数（即负的ELBO），并使用梯度下降进行优化：
 
 $$
-\text{Loss} = -\text{ELBO} = \text{Likelihood} + \beta \cdot \text
-
-{KL}(Q(W, b) || P(W, b))
+\text{Loss} = -\text{ELBO} = \text{Likelihood} + \beta \cdot \text{KL}(Q(W, b) || P(W, b))
 $$
 
 这里，$\beta$ 是KL散度的权重系数，通常用于平衡似然项与KL散度的影响。
@@ -981,4 +979,4 @@ $$
 \text{KL}(Q(W, b) || P(W, b)) = \mathbb{E}_{Q(W, b)} \left[ \log Q(W, b) \right] - \mathbb{E}_{Q(W, b)} \left[ \log P(W, b) \right]
 $$
 
-它表示在 $Q(W, b)$ 下的自信息期望与在 $P(W, b)$ 下的期望信息之间的差异。通过最小化这个KL散度，我们能够找到一个更接近真实分布的 $ Q(W, b) $。
+它表示在 $Q(W, b)$ 下的自信息期望与在 $P(W, b)$ 下的期望信息之间的差异。通过最小化这个KL散度，我们能够找到一个更接近真实分布的 $ Q(W, b) $。\\[\\]\\(\\)

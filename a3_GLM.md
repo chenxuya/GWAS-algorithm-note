@@ -95,7 +95,7 @@ $$
 
 其中：
 - $ Y $ 是 $ n \times 1 $ 的表型向量，表示 $ n $ 个样本的表型值（因变量）。
-- $ X $ 是 $ n \times p $ 的设计矩阵，表示 $ n $ 个样本在 $ p $ 个自变量（如SNP基因型、协变量）上的取值。
+- $ X $ 是 $ n \times p $ 的设计矩阵，表示 $ n $ 个样本在 $ p $ 个自变量（如SNP基因型,协变量等）上的取值。
 - $ \beta $ 是 $ p \times 1 $ 的回归系数向量，表示模型中每个自变量对表型的影响大小。
 - $ \epsilon $ 是 $ n \times 1 $ 的误差项向量，假设 $ \epsilon \sim N(0, \sigma^2 I) $，即服从均值为0、方差为 $ \sigma^2 $ 的正态分布。
 
@@ -112,13 +112,21 @@ $$
 其中 $ \hat{\epsilon} $ 是残差向量，$ \hat{\beta} $ 是我们估计的回归系数。残差平方和（Residual Sum of Squares, RSS）可以表示为：
 
 $$
-RSS = \hat{\epsilon}^T \hat{\epsilon} = (Y - X\hat{\beta})^T (Y - X\hat{\beta})
+\begin{align}
+RSS &= \hat{\epsilon}^T \hat{\epsilon} = (Y - X\hat{\beta})^T (Y - X\hat{\beta}) \\
+    &= Y^T Y - Y^T X \hat{\beta} - (X \hat{\beta})^T Y + (X \hat{\beta})^T X \hat{\beta}
+\end{align}
+$$
+
+因为$(X\hat{\beta})^TY$ 为标量，所以其转置后值不变，即$(X\hat{\beta})^TY = Y^TX\hat{\beta}$. 带入上式得：
+$$
+RSS = Y^TY - 2Y^TX\hat{\beta} + \hat{\beta}^TX^TX\hat{\beta}
 $$
 
 为最小化RSS，我们对 $ \hat{\beta} $ 求导，并令导数为0：
-
 $$
-\frac{\partial RSS}{\partial \hat{\beta}} = -2X^T(Y - X\hat{\beta}) = 0
+\frac{\partial RSS}{\partial \hat{\beta}} = -2X^T Y + 2X^T X \hat{\beta} \\
+\phantom{\frac{\partial RSS}{\partial \hat{\beta}}} = -2X^T (Y - X\hat{\beta}) = 0
 $$
 
 解得：
@@ -260,4 +268,4 @@ F检验的原假设为所有回归系数 $ \beta_1 = \beta_2 = \dots = \beta_p =
 - **t检验**：对每个回归系数进行t检验，t统计量为 $ t_j = \frac{\hat{\beta}_j}{\text{SE}(\hat{\beta}_j)} $，用于检验个别自变量的显著性。
 - **F检验**：对整个模型进行F检验，F统计量为 $ F = \frac{(TSS - RSS)/p}{RSS/(n - p)} $，用于评估模型整体的显著性。
 
-通过这些步骤，GLM可以有效地估计模型参数并检验其统计显著性，从而判断SNP基因型是否与表型具有显著关联。
+通过这些步骤，GLM可以有效地估计模型参数并检验其统计显著性，从而判断SNP基因型是否与表型具有显著关联。\\[\\]\\(\\)

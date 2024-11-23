@@ -418,4 +418,4 @@ sigma2_mean = np.mean(sigma2_samples)
 print("Estimated beta coefficients:", beta_mean)
 print("Estimated sigma^2:", sigma2_mean)
 
-```
+```\\[\\]\\(\\)

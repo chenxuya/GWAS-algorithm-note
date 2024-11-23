@@ -625,4 +625,4 @@ print("True sigma_u:", true_sigma_u)
 print("Estimated sigma_u:", sigma_u_samples[-100:].mean())
 print("True sigma_e:", true_sigma_e)
 print("Estimated sigma_e:", sigma_e_samples[-100:].mean())
-```
+```\\[\\]\\(\\)
